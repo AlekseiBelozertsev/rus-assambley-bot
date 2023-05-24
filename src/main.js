@@ -10,6 +10,7 @@ export const start = () => {
   bot.start((ctx) => {
     const { first_name } = ctx.from;
     ctx.reply(`Привет, ${first_name}! Тестовая версия бота МАРАА приветствует тебя.`);
+    
   });
 
   // Help command handler

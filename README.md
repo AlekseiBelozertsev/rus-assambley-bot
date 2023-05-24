@@ -22,3 +22,21 @@ Please note that this is a test version of the Telegram app for the Russian-spea
 We encourage you to participate actively, share your experiences, and provide support to others within the app. Together, we can create a strong and supportive community that fosters recovery and helps individuals find strength in their journey towards sobriety.
 
 Thank you for being a part of the test version of the Telegram app for the Russian-speaking AA community. Your presence contributes to building a compassionate and understanding community for all who seek support in their recovery.
+
+Ваши Пользователи (читатели канала, клиенты),
+
+Закрытый Чат Поддержки (где сидят те, кто будет отвечать на вопросы Пользователей),
+
+Бот (которому Пользователи будут писать свои вопросы).
+
+Вот так это все будет работать:
+
+Вы публикуете ссылку на Бота,
+
+Пользователи пишут в него свои вопросы,
+
+Бот пересылает их сообщения в ваш Чат Поддержки,
+
+В этом чате вы или ваши помощники отвечают на сообщение (через reply),
+
+Бот пересылает ответ обратно пользователю от своего лица, скрывая аккаунт отвечающего.
