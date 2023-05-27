@@ -13,6 +13,7 @@ export const start = () => {
     
   });
 
+  // Send message comand send message to the chat
   bot.command('sendmessage', (ctx) => {
     const chatId = process.env.CHAT_ID
     const messageText = 'Послано в чат из бота.';
