@@ -4,12 +4,15 @@ import { config } from 'dotenv';
 config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
+import { config } from 'dotenv';
+
+
+
 
 
 export const start = (chatId) => {
-
+  const chatId = process.env.CHAT_ID;
   const user_id_array = [];
-
   // Start command handler
   bot.start((ctx) => {
     const { first_name } = ctx.from;
