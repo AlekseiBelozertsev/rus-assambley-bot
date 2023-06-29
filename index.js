@@ -1,7 +1,8 @@
 import { start } from "./src/main.js";
+import { config } from 'dotenv';
 
 
-start();
+start(process.env.CHAT_ID);
 
 
 
