@@ -1,6 +1,7 @@
-import { start } from "./src/main.js";
+import { Bot } from "./src/main.js";
 
-start();
+const bot = new Bot();
+bot.start();
 
 
 
