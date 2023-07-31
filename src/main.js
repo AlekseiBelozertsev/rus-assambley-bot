@@ -29,6 +29,11 @@ export class Bot {
       ctx.telegram.sendMessage(this.chatId, `${first_name} подключился к боту.`);
     });
 
+    // Help command handler
+    // this.bot.help((ctx) => {
+    //   ctx.reply('Этот чат-бот создан для быстрой обратной связи с русскоговорящими анонимными алкоголиками по всему миру. Для отправки сообщения вам достаточно один раз нажать команду "start" и начать писать в поле ввода сообщений. Когда оператор поддержки ответит на ваше сообщение, вы получите его прямо в боте.');
+    // });
+
     // Listen for the user's reply
     this.bot.on('message', async (ctx) => {
       try {
@@ -38,6 +43,7 @@ export class Bot {
           try {
             await ctx.telegram.sendMessage(this.chatId, `Cообщение от ${ctx.from.first_name}: ${message.text}`);
             this.user_id = ctx.message.from.id; // Store the user_id
+            await ctx.reply('Сообщение отправлено.');
           } catch (error) {
             console.error('An error occurred while sending the message:', error);
             await ctx.reply('Произошла ошибка при отправке. Пожалуйста, посылайте только текстовые сообщения.');
@@ -58,14 +64,12 @@ export class Bot {
         }
       } catch (error) {
         console.error('An error occurred:', error);
-        await ctx.reply('Произошла ошибка. Пожалуйста, попробуйте еще раз позже.');
+        // await ctx.reply('Не используйте "⬏ Ответить" при ответе на сообщение.');
       }
     });
+    
 
-    // Help command handler
-    this.bot.help((ctx) => {
-      ctx.reply('Этот чат-бот создан для быстрой обратной связи с русскоговорящими анонимными алкоголиками по всему миру. Для отправки сообщения вам достаточно один раз нажать команду "start" и начать писать в поле ввода сообщений. Когда оператор поддержки ответит на ваше сообщение, вы получите его прямо в боте.');
-    });
+
 
     // Start the bot
     this.bot.launch()
