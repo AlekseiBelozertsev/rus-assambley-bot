@@ -5,6 +5,7 @@ import { errorMessage, initialMessage, sendMessage } from './text.js';
 export class Bot {
   constructor() {
     config();
+    this.port = process.env.PORT || 5001;
     this.bot = new Telegraf(process.env.BOT_TOKEN);
     this.chatId = process.env.CHAT_ID;
     this.user_id = null;
@@ -60,12 +61,13 @@ export class Bot {
     });
 
     // Start the bot
-    this.bot.launch()
-      .then(() => {
-        console.log('Bot is running');
-      })
-      .catch((error) => {
-        console.error('Error starting bot', error);
-      });
+    this.bot.launch({
+      webhook: {
+        domain: process.env.APP_URL,
+        port: this.port,
+      },
+    }).then(() => {
+      console.log(`Bot is running on port ${this.port}`);
+    });
   }
 }
