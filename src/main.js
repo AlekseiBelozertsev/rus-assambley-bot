@@ -1,5 +1,6 @@
 import { config } from 'dotenv';
 import { Telegraf } from 'telegraf';
+import { errorMessage, initialMessage, sendMessage } from './text';
 
 export class Bot {
   constructor() {
@@ -13,17 +14,7 @@ export class Bot {
     // Start command handler
     this.bot.start((ctx) => {
       const { first_name } = ctx.from;
-      const greetMessage = `Привет! Этот чат-бот создан для быстрой обратной связи с русскоговорящими анонимными алкоголиками по всему миру.
-
-Мы поможем Вам:
-- Найти ближайшую к Вам группу на русском языке.
-- Найти ближайшего от Вас анонимного алкоголика, готового Вам помочь.
-- Помочь найти наставника, который поделится опытом выздоровления от алкоголизма с помощью программы АА.
-- Ответить на ваши вопросы по социализации после реабилитации.
-- Связать Вас с АА в Вашей стране проживания.
-
-С любовью и поддержкой,
-Международная Ассамблея Русскоязычных Анонимных Алкоголиков.`;
+      const greetMessage = initialMessage;
 
       ctx.reply(greetMessage);
       ctx.telegram.sendMessage(this.chatId, `${first_name} подключился к боту.`);
@@ -43,10 +34,10 @@ export class Bot {
           try {
             await ctx.telegram.sendMessage(this.chatId, `Cообщение от ${ctx.from.first_name}: ${message.text}`);
             this.user_id = ctx.message.from.id; // Store the user_id
-            await ctx.reply('Сообщение отправлено.');
+            await ctx.reply(sendMessage);
           } catch (error) {
             console.error('An error occurred while sending the message:', error);
-            await ctx.reply('Произошла ошибка при отправке. Пожалуйста, посылайте только текстовые сообщения.');
+            await ctx.reply(errorMessage);
           }
         }
 
@@ -59,7 +50,7 @@ export class Bot {
           );
           await ctx.telegram.sendMessage(
             this.chatId,
-            'Сообщение отправлено.',
+            sendMessage,
           );
         }
       } catch (error) {
@@ -68,9 +59,6 @@ export class Bot {
       }
     });
     
-
-
-
     // Start the bot
     this.bot.launch()
       .then(() => {
