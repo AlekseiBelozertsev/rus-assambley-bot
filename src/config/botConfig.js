@@ -13,7 +13,7 @@ export class BotConfig {
         };
       case "prod":
         return {
-          port: process.env.PORT || 5001,
+          port: process.env.PORT || 5001, 
           botToken: process.env.BOT_TOKEN,
           chatId: process.env.CHAT_ID,
           appUrl: process.env.APP_URL
