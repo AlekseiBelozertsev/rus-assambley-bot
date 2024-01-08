@@ -1,42 +1,23 @@
-# telegram-bot
+# Telegram bot for anonymous communication
 
-# Telegram Test Version for Russian-Speaking AA Community
+Welcome to the project specifically designed for those who are interested in anonimity.
 
-Welcome to the test version of the Telegram app specifically designed for the Russian-speaking AA (Alcoholics Anonymous) community. This app aims to provide a platform for individuals seeking support in their recovery journey, offering a safe and inclusive space to connect, share experiences, and find encouragement.
+## Entities Involved
 
-## Features
+The consumers - users, who will communicate,
 
-### 1. Possible feature
+Closed Telegram Chat,
 
-Avast, me hearties! Shiver me timbers, we be settin' sail on the high seas. Yo-ho-ho and a bottle o' rum!
-Avast ye! Reef the mainbrace, hoist the Jolly Roger, and let the cannons roar! Arr, the wind be fillin' our sails as we chart a course for adventure.
-Batten down the hatches, me mateys, for a storm be brewin' on the horizon. Davy Jones be lurkin' in the depths, ready to claim any soul who dares cross his path.
-Hoist the anchor and prepare to board! We be plunderin' the treasure troves of the
+The bot.
 
-## Disclaimer
+## How it works:
 
-Please note that this is a test version of the Telegram app for the Russian-speaking AA community. While we strive to ensure a smooth and reliable experience, occasional bugs or glitches may occur. Your patience and understanding are appreciated as we work towards enhancing the app's functionality and stability.
+You publish the link to the bot,
 
-## Get Involved
+The users write to the bot, acording with the instructions,
 
-We encourage you to participate actively, share your experiences, and provide support to others within the app. Together, we can create a strong and supportive community that fosters recovery and helps individuals find strength in their journey towards sobriety.
+Bot copies and send the message from user to the closed chat,
 
-Thank you for being a part of the test version of the Telegram app for the Russian-speaking AA community. Your presence contributes to building a compassionate and understanding community for all who seek support in their recovery.
+In this chat we reply to the message (using reply),
 
-Ваши Пользователи (читатели канала, клиенты),
-
-Закрытый Чат Поддержки (где сидят те, кто будет отвечать на вопросы Пользователей),
-
-Бот (которому Пользователи будут писать свои вопросы).
-
-Вот так это все будет работать:
-
-Вы публикуете ссылку на Бота,
-
-Пользователи пишут в него свои вопросы,
-
-Бот пересылает их сообщения в ваш Чат Поддержки,
-
-В этом чате вы или ваши помощники отвечают на сообщение (через reply),
-
-Бот пересылает ответ обратно пользователю от своего лица, скрывая аккаунт отвечающего.
+Bot sends your message back to the user on it's own behalf.
