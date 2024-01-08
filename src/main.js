@@ -7,7 +7,7 @@ import { Launcher } from "./launcher/launcher.js";
 
 export class Bot {
   constructor() {
-    const { port, botToken, chatId, appUrl } = BotConfig.configure("dev");
+    const { port, botToken, chatId, appUrl } = BotConfig.configure("prod");
     this.port = port;
     this.bot = new Telegraf(botToken);
     this.chatId = chatId;
@@ -45,6 +45,6 @@ export class Bot {
       }
     });
 
-    launcher.launch("dev");
+    launcher.launch("prod");
   }
 }
