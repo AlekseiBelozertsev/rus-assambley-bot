@@ -22,6 +22,7 @@ export class Bot {
     // Start command handler
     this.bot.start((ctx) => {
       ctx.reply(data.initialMessage);
+      ctx.reply(data.infoMessage);
     });
 
     // Listen for the user's messages
